@@ -2,6 +2,8 @@ package com.orangeandbronze.enlistment;
 
 import java.util.*;
 
+import static org.apache.commons.lang3.Validate.*;
+
 class Student{
     private final int studentNumber;
     private final Collection<Section> sections = new HashSet<>();
@@ -12,9 +14,8 @@ class Student{
                 "studentNumber should be non-negative, was: "
                         + studentNumber);
             }
-        if(sections == null){
-            throw new NullPointerException();
-        }
+
+        notEmpty(sections);
 
         this.studentNumber = studentNumber;
         this.sections.addAll(sections);
@@ -22,9 +23,7 @@ class Student{
     }
 
     void enlist(Section section){
-        if(section == null) {
-            throw new NullPointerException();
-        }
+        notNull(section);
         this.sections.add(section);
     }
 

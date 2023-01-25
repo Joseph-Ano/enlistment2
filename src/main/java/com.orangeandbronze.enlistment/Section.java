@@ -1,7 +1,7 @@
 package com.orangeandbronze.enlistment;
 
-import org.apache.commons.lang3.StringUtils;
-import org.apache.commons.lang3.Validate;
+import static org.apache.commons.lang3.StringUtils.*;
+import static org.apache.commons.lang3.Validate.*;
 
 import java.util.Objects;
 
@@ -10,8 +10,8 @@ public class Section {
     private final String sectionID;
 
     public Section(String sectionID){
-        Validate.notBlank(sectionID);
-        Validate.isTrue(StringUtils.isAlphanumeric(sectionID), "sectionID must be alphanumeric, was: " + sectionID);
+        notBlank(sectionID);
+        isTrue(isAlphanumeric(sectionID), "sectionID must be alphanumeric, was: " + sectionID);
 
         this.sectionID = sectionID;
     }
