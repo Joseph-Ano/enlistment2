@@ -1,7 +1,6 @@
 package com.orangeandbronze.enlistment;
 
 import java.util.*;
-
 import static org.apache.commons.lang3.Validate.*;
 
 class Student{
